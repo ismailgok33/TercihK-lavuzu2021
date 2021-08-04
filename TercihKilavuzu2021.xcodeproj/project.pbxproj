@@ -9,21 +9,39 @@
 /* Begin PBXBuildFile section */
 		EC2705BB26BB06520011526F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705BA26BB06520011526F /* AppDelegate.swift */; };
 		EC2705BD26BB06520011526F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705BC26BB06520011526F /* SceneDelegate.swift */; };
-		EC2705BF26BB06520011526F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705BE26BB06520011526F /* ViewController.swift */; };
-		EC2705C226BB06520011526F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC2705C026BB06520011526F /* Main.storyboard */; };
+		EC2705BF26BB06520011526F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705BE26BB06520011526F /* HomeViewController.swift */; };
 		EC2705C426BB06530011526F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC2705C326BB06530011526F /* Assets.xcassets */; };
 		EC2705C726BB06530011526F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC2705C526BB06530011526F /* LaunchScreen.storyboard */; };
+		EC2705D026BB06A10011526F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC2705CF26BB06A10011526F /* StoreKit.framework */; };
+		EC2705D726BB08460011526F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705D626BB08460011526F /* TabBarViewController.swift */; };
+		EC2705D926BB087C0011526F /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705D826BB087C0011526F /* FavoritesViewController.swift */; };
+		EC2705DC26BB08A20011526F /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705DB26BB08A20011526F /* FiltersViewController.swift */; };
+		EC2705DE26BB09050011526F /* CountDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705DD26BB09050011526F /* CountDownViewController.swift */; };
+		EC2705E026BB092E0011526F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705DF26BB092E0011526F /* DatabaseManager.swift */; };
+		EC2705E226BB09440011526F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705E126BB09440011526F /* StorageManager.swift */; };
+		EC2705E426BB14FD0011526F /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705E326BB14FD0011526F /* University.swift */; };
+		EC2705E626BB1B5F0011526F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705E526BB1B5F0011526F /* Extensions.swift */; };
+		EC2705E826BB1C6A0011526F /* UniversityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705E726BB1C6A0011526F /* UniversityTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EC2705B726BB06520011526F /* TercihKilavuzu2021.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TercihKilavuzu2021.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC2705BA26BB06520011526F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC2705BC26BB06520011526F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EC2705BE26BB06520011526F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EC2705C126BB06520011526F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC2705BE26BB06520011526F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EC2705C326BB06530011526F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC2705C626BB06530011526F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC2705C826BB06530011526F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC2705CF26BB06A10011526F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		EC2705D626BB08460011526F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		EC2705D826BB087C0011526F /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		EC2705DB26BB08A20011526F /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
+		EC2705DD26BB09050011526F /* CountDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownViewController.swift; sourceTree = "<group>"; };
+		EC2705DF26BB092E0011526F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		EC2705E126BB09440011526F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		EC2705E326BB14FD0011526F /* University.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
+		EC2705E526BB1B5F0011526F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EC2705E726BB1C6A0011526F /* UniversityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC2705D026BB06A10011526F /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +61,7 @@
 			children = (
 				EC2705B926BB06520011526F /* TercihKilavuzu2021 */,
 				EC2705B826BB06520011526F /* Products */,
+				EC2705CE26BB06A10011526F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +76,71 @@
 		EC2705B926BB06520011526F /* TercihKilavuzu2021 */ = {
 			isa = PBXGroup;
 			children = (
-				EC2705BA26BB06520011526F /* AppDelegate.swift */,
-				EC2705BC26BB06520011526F /* SceneDelegate.swift */,
-				EC2705BE26BB06520011526F /* ViewController.swift */,
-				EC2705C026BB06520011526F /* Main.storyboard */,
-				EC2705C326BB06530011526F /* Assets.xcassets */,
-				EC2705C526BB06530011526F /* LaunchScreen.storyboard */,
+				EC2705D526BB07B90011526F /* Managers */,
+				EC2705D426BB07B10011526F /* Resources */,
+				EC2705D326BB07AB0011526F /* Controllers */,
+				EC2705D226BB07A70011526F /* Views */,
+				EC2705D126BB07A10011526F /* Models */,
 				EC2705C826BB06530011526F /* Info.plist */,
 			);
 			path = TercihKilavuzu2021;
+			sourceTree = "<group>";
+		};
+		EC2705CE26BB06A10011526F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC2705CF26BB06A10011526F /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC2705D126BB07A10011526F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC2705E326BB14FD0011526F /* University.swift */,
+				EC2705E726BB1C6A0011526F /* UniversityTableViewCell.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EC2705D226BB07A70011526F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC2705C526BB06530011526F /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EC2705D326BB07AB0011526F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EC2705BE26BB06520011526F /* HomeViewController.swift */,
+				EC2705D626BB08460011526F /* TabBarViewController.swift */,
+				EC2705D826BB087C0011526F /* FavoritesViewController.swift */,
+				EC2705DB26BB08A20011526F /* FiltersViewController.swift */,
+				EC2705DD26BB09050011526F /* CountDownViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EC2705D426BB07B10011526F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EC2705BA26BB06520011526F /* AppDelegate.swift */,
+				EC2705BC26BB06520011526F /* SceneDelegate.swift */,
+				EC2705C326BB06530011526F /* Assets.xcassets */,
+				EC2705E526BB1B5F0011526F /* Extensions.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EC2705D526BB07B90011526F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EC2705DF26BB092E0011526F /* DatabaseManager.swift */,
+				EC2705E126BB09440011526F /* StorageManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +202,6 @@
 			files = (
 				EC2705C726BB06530011526F /* LaunchScreen.storyboard in Resources */,
 				EC2705C426BB06530011526F /* Assets.xcassets in Resources */,
-				EC2705C226BB06520011526F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +212,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC2705BF26BB06520011526F /* ViewController.swift in Sources */,
+				EC2705E026BB092E0011526F /* DatabaseManager.swift in Sources */,
+				EC2705E826BB1C6A0011526F /* UniversityTableViewCell.swift in Sources */,
+				EC2705D726BB08460011526F /* TabBarViewController.swift in Sources */,
+				EC2705BF26BB06520011526F /* HomeViewController.swift in Sources */,
+				EC2705E226BB09440011526F /* StorageManager.swift in Sources */,
 				EC2705BB26BB06520011526F /* AppDelegate.swift in Sources */,
+				EC2705D926BB087C0011526F /* FavoritesViewController.swift in Sources */,
+				EC2705DC26BB08A20011526F /* FiltersViewController.swift in Sources */,
 				EC2705BD26BB06520011526F /* SceneDelegate.swift in Sources */,
+				EC2705DE26BB09050011526F /* CountDownViewController.swift in Sources */,
+				EC2705E626BB1B5F0011526F /* Extensions.swift in Sources */,
+				EC2705E426BB14FD0011526F /* University.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EC2705C026BB06520011526F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC2705C126BB06520011526F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EC2705C526BB06530011526F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -288,6 +364,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TercihKilavuzu2021/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,6 +383,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TercihKilavuzu2021/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
