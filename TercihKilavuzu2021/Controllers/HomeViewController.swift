@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     let cellId = "cellId"
     let tableView = UITableView()
     
+    let searchController = UISearchController()
     var universities : [University] = [University]()
     
     override func viewDidLoad() {
@@ -24,6 +25,11 @@ class HomeViewController: UIViewController {
         tableView.register(UniversityTableViewCell.self, forCellReuseIdentifier: cellId)
         
         tableView.rowHeight = 200
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Üniversite arayınız..."
+        navigationItem.searchController = searchController
         
         createDummyUniversities()
         
@@ -40,6 +46,12 @@ class HomeViewController: UIViewController {
         universities.append(University(name: "Bilkent", department: "Makine Mühendisliği", location: "Ankara", educationDuration: 4))
         universities.append(University(name: "Boğaziçi", department: "Bilgisayar Mühendisliği", location: "İstanbul", educationDuration: 4))
         universities.append(University(name: "ODTÜ", department: "Endüstri Mühendisliği", location: "Ankara", educationDuration: 2))
+    }
+    
+    // Load items from db
+    private func loadAllUniversities() {
+        //Load university data from Firebase here
+        tableView.reloadData()
     }
 
 
@@ -67,4 +79,24 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     
+}
+
+
+
+extension HomeViewController : UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let text = searchController.searchBar.text, !text.isEmpty {
+            
+            // Filter universities from Firebase here. universities = universities.filter.....
+            
+            tableView.reloadData()
+        }
+        else {
+            loadAllUniversities()
+        }
+        
+        
+    }
+
 }

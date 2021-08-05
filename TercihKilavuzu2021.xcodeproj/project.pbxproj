@@ -22,6 +22,7 @@
 		EC2705E426BB14FD0011526F /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705E326BB14FD0011526F /* University.swift */; };
 		EC2705E626BB1B5F0011526F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705E526BB1B5F0011526F /* Extensions.swift */; };
 		EC2705E826BB1C6A0011526F /* UniversityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705E726BB1C6A0011526F /* UniversityTableViewCell.swift */; };
+		EC898CC026BC621C00F7FE8E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC898CBF26BC621C00F7FE8E /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		EC2705E326BB14FD0011526F /* University.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
 		EC2705E526BB1B5F0011526F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EC2705E726BB1C6A0011526F /* UniversityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityTableViewCell.swift; sourceTree = "<group>"; };
+		EC898CBF26BC621C00F7FE8E /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				EC2705D826BB087C0011526F /* FavoritesViewController.swift */,
 				EC2705DB26BB08A20011526F /* FiltersViewController.swift */,
 				EC2705DD26BB09050011526F /* CountDownViewController.swift */,
+				EC898CBF26BC621C00F7FE8E /* AboutViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				EC2705BD26BB06520011526F /* SceneDelegate.swift in Sources */,
 				EC2705DE26BB09050011526F /* CountDownViewController.swift in Sources */,
 				EC2705E626BB1B5F0011526F /* Extensions.swift in Sources */,
+				EC898CC026BC621C00F7FE8E /* AboutViewController.swift in Sources */,
 				EC2705E426BB14FD0011526F /* University.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
