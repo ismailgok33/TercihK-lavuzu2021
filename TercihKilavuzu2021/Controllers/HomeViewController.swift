@@ -15,6 +15,8 @@ class HomeViewController: UIViewController {
     let searchController = UISearchController()
     var universities : [University] = [University]()
     
+    private var universityVm = UniversityViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +33,9 @@ class HomeViewController: UIViewController {
         searchController.searchBar.placeholder = "Üniversite arayınız..."
         navigationItem.searchController = searchController
         
-        createDummyUniversities()
+        universities = universityVm.fetchData()
+        print("university - 2: \(universities)")
+//        universities = universityVm.universities
         
     }
     
@@ -40,13 +44,7 @@ class HomeViewController: UIViewController {
         tableView.frame = view.bounds
     }
     
-    private func createDummyUniversities() {
-        universities.append(University(name: "ODTÜ", department: "Elektrik Elektronik Mühendisliği", location: "Ankara", educationDuration: 4))
-        universities.append(University(name: "TOBB", department: "Bilgisayar Mühendisliği", location: "Ankara", educationDuration: 4))
-        universities.append(University(name: "Bilkent", department: "Makine Mühendisliği", location: "Ankara", educationDuration: 4))
-        universities.append(University(name: "Boğaziçi", department: "Bilgisayar Mühendisliği", location: "İstanbul", educationDuration: 4))
-        universities.append(University(name: "ODTÜ", department: "Endüstri Mühendisliği", location: "Ankara", educationDuration: 2))
-    }
+   
     
     // Load items from db
     private func loadAllUniversities() {
@@ -56,6 +54,7 @@ class HomeViewController: UIViewController {
 
 
 }
+
 
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     

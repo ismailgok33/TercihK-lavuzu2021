@@ -13,7 +13,7 @@ class UniversityTableViewCell: UITableViewCell {
         didSet {
             // set values here
             if let uni = university {
-                universityNameLabel.text = "\(uni.name) (\(uni.location))"
+                universityNameLabel.text = "\(uni.name) (\(uni.city))"
                 departmentLabel.text = uni.department
                 minScoreValueLabel.text = "1000"
                 placeMentValueLabel.text = "200"

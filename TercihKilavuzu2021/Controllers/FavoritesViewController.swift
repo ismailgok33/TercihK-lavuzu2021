@@ -25,7 +25,6 @@ class FavoritesViewController: UIViewController {
         
         tableView.rowHeight = 200
         
-        createDummyUniversities()
     }
     
     override func viewDidLayoutSubviews() {
@@ -33,11 +32,7 @@ class FavoritesViewController: UIViewController {
         tableView.frame = view.bounds
     }
     
-    private func createDummyUniversities() {
-        favorites.append(University(name: "ODTÜ", department: "Elektrik Elektronik Mühendisliği", location: "Ankara", educationDuration: 4))
-        favorites.append(University(name: "TOBB", department: "Bilgisayar Mühendisliği", location: "Ankara", educationDuration: 4))
-        favorites.append(University(name: "Bilkent", department: "Makine Mühendisliği", location: "Ankara", educationDuration: 4))
-    }
+   
     
 
 }

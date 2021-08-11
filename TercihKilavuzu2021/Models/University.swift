@@ -7,10 +7,16 @@
 
 import Foundation
 
-struct University {
+struct University: Identifiable {
+    let id : String = UUID().uuidString
     let name : String
     let department : String
-    let location : String
-    let educationDuration : Int
+    let city : String
+    let language : String
+    let minScore : String
+    let placement : String
+    let quaota : String
+    let duration : String
+    let type : String
     
 }

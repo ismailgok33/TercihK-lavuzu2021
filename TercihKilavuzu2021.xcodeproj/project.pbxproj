@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67E12CB589A4ED9E55B7E670 /* Pods_TercihKilavuzu2021.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB45ECBE486C76D6B88E007B /* Pods_TercihKilavuzu2021.framework */; };
 		EC2705BB26BB06520011526F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705BA26BB06520011526F /* AppDelegate.swift */; };
 		EC2705BD26BB06520011526F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705BC26BB06520011526F /* SceneDelegate.swift */; };
 		EC2705BF26BB06520011526F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705BE26BB06520011526F /* HomeViewController.swift */; };
@@ -22,10 +23,15 @@
 		EC2705E426BB14FD0011526F /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705E326BB14FD0011526F /* University.swift */; };
 		EC2705E626BB1B5F0011526F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705E526BB1B5F0011526F /* Extensions.swift */; };
 		EC2705E826BB1C6A0011526F /* UniversityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705E726BB1C6A0011526F /* UniversityTableViewCell.swift */; };
+		EC46F8A226C457D5007911BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC46F8A126C457D5007911BB /* GoogleService-Info.plist */; };
+		EC46F8A526C45C45007911BB /* UniversityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46F8A426C45C45007911BB /* UniversityViewModel.swift */; };
 		EC898CC026BC621C00F7FE8E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC898CBF26BC621C00F7FE8E /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7370DDCABE066FF20AF6F413 /* Pods-TercihKilavuzu2021.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TercihKilavuzu2021.release.xcconfig"; path = "Target Support Files/Pods-TercihKilavuzu2021/Pods-TercihKilavuzu2021.release.xcconfig"; sourceTree = "<group>"; };
+		DB45ECBE486C76D6B88E007B /* Pods_TercihKilavuzu2021.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TercihKilavuzu2021.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E33E65C10B42932D2C75831C /* Pods-TercihKilavuzu2021.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TercihKilavuzu2021.debug.xcconfig"; path = "Target Support Files/Pods-TercihKilavuzu2021/Pods-TercihKilavuzu2021.debug.xcconfig"; sourceTree = "<group>"; };
 		EC2705B726BB06520011526F /* TercihKilavuzu2021.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TercihKilavuzu2021.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC2705BA26BB06520011526F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC2705BC26BB06520011526F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +49,8 @@
 		EC2705E326BB14FD0011526F /* University.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
 		EC2705E526BB1B5F0011526F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EC2705E726BB1C6A0011526F /* UniversityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityTableViewCell.swift; sourceTree = "<group>"; };
+		EC46F8A126C457D5007911BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EC46F8A426C45C45007911BB /* UniversityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityViewModel.swift; sourceTree = "<group>"; };
 		EC898CBF26BC621C00F7FE8E /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC2705D026BB06A10011526F /* StoreKit.framework in Frameworks */,
+				67E12CB589A4ED9E55B7E670 /* Pods_TercihKilavuzu2021.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +73,7 @@
 				EC2705B926BB06520011526F /* TercihKilavuzu2021 */,
 				EC2705B826BB06520011526F /* Products */,
 				EC2705CE26BB06A10011526F /* Frameworks */,
+				F648A93709A892F4A3B09BBB /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,8 +92,10 @@
 				EC2705D426BB07B10011526F /* Resources */,
 				EC2705D326BB07AB0011526F /* Controllers */,
 				EC2705D226BB07A70011526F /* Views */,
+				EC46F8A326C45C2A007911BB /* ViewModels */,
 				EC2705D126BB07A10011526F /* Models */,
 				EC2705C826BB06530011526F /* Info.plist */,
+				EC46F8A126C457D5007911BB /* GoogleService-Info.plist */,
 			);
 			path = TercihKilavuzu2021;
 			sourceTree = "<group>";
@@ -92,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				EC2705CF26BB06A10011526F /* StoreKit.framework */,
+				DB45ECBE486C76D6B88E007B /* Pods_TercihKilavuzu2021.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,6 +159,23 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		EC46F8A326C45C2A007911BB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EC46F8A426C45C45007911BB /* UniversityViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F648A93709A892F4A3B09BBB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E33E65C10B42932D2C75831C /* Pods-TercihKilavuzu2021.debug.xcconfig */,
+				7370DDCABE066FF20AF6F413 /* Pods-TercihKilavuzu2021.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,9 +183,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC2705CB26BB06530011526F /* Build configuration list for PBXNativeTarget "TercihKilavuzu2021" */;
 			buildPhases = (
+				D26FC7D0A82F5AB88BBDBEE0 /* [CP] Check Pods Manifest.lock */,
 				EC2705B326BB06520011526F /* Sources */,
 				EC2705B426BB06520011526F /* Frameworks */,
 				EC2705B526BB06520011526F /* Resources */,
+				26BDD096A6B2F30CF2FC2692 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,10 +237,53 @@
 			files = (
 				EC2705C726BB06530011526F /* LaunchScreen.storyboard in Resources */,
 				EC2705C426BB06530011526F /* Assets.xcassets in Resources */,
+				EC46F8A226C457D5007911BB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26BDD096A6B2F30CF2FC2692 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TercihKilavuzu2021/Pods-TercihKilavuzu2021-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TercihKilavuzu2021/Pods-TercihKilavuzu2021-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TercihKilavuzu2021/Pods-TercihKilavuzu2021-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D26FC7D0A82F5AB88BBDBEE0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TercihKilavuzu2021-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EC2705B326BB06520011526F /* Sources */ = {
@@ -225,6 +300,7 @@
 				EC2705DC26BB08A20011526F /* FiltersViewController.swift in Sources */,
 				EC2705BD26BB06520011526F /* SceneDelegate.swift in Sources */,
 				EC2705DE26BB09050011526F /* CountDownViewController.swift in Sources */,
+				EC46F8A526C45C45007911BB /* UniversityViewModel.swift in Sources */,
 				EC2705E626BB1B5F0011526F /* Extensions.swift in Sources */,
 				EC898CC026BC621C00F7FE8E /* AboutViewController.swift in Sources */,
 				EC2705E426BB14FD0011526F /* University.swift in Sources */,
@@ -363,6 +439,7 @@
 		};
 		EC2705CC26BB06530011526F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E33E65C10B42932D2C75831C /* Pods-TercihKilavuzu2021.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -382,6 +459,7 @@
 		};
 		EC2705CD26BB06530011526F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7370DDCABE066FF20AF6F413 /* Pods-TercihKilavuzu2021.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
