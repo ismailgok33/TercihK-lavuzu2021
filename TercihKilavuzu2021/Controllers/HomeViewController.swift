@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     let searchController = UISearchController()
     var universities : [University] = [University]()
     
-    private var universityVm = UniversityViewModel()
+//    private var universityVm = UniversityViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +33,6 @@ class HomeViewController: UIViewController {
         searchController.searchBar.placeholder = "Üniversite arayınız..."
         navigationItem.searchController = searchController
         
-        universities = universityVm.fetchData()
-        print("university - 2: \(universities)")
-//        universities = universityVm.universities
         
     }
     
@@ -65,10 +62,12 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UniversityTableViewCell
+        let model = universities[indexPath.row]
         
-        cell.university = universities[indexPath.row]
-        
-        
+//        cell.university = universities[indexPath.row]
+        cell.configure(with: UniversityViewModel(with: model))
+        cell.delegate = self
+         
         return cell
     }
     
@@ -98,4 +97,13 @@ extension HomeViewController : UISearchResultsUpdating {
         
     }
 
+}
+
+extension HomeViewController: UniversityTableViewCellDelegate {
+    func universityTableViewCell(_ cell: UniversityTableViewCell, didTapWith viewModel: UniversityViewModel) {
+        
+        if viewModel.isFavorite {
+            // Save cell to favorites
+        }
+    }
 }

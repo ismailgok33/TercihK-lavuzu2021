@@ -7,8 +7,16 @@
 
 import UIKit
 
-class UniversityTableViewCell: UITableViewCell {
+protocol UniversityTableViewCellDelegate {
+    func universityTableViewCell(_ cell: UniversityTableViewCell, didTapWith viewModel: UniversityViewModel)
+}
 
+class UniversityTableViewCell: UITableViewCell {
+    
+    var delegate: UniversityTableViewCellDelegate?
+
+    private var viewModel: UniversityViewModel?
+    
     var university : University? {
         didSet {
             // set values here
@@ -117,6 +125,11 @@ class UniversityTableViewCell: UITableViewCell {
         return icon
     }()
     
+    private let favoriteButton : UIButton = {
+       let button = UIButton()
+        return button
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -128,11 +141,18 @@ class UniversityTableViewCell: UITableViewCell {
         addSubview(placeMentValueLabel)
         addSubview(quotaTitleLabel)
         addSubview(quotaValueLabel)
-        addSubview(favoriteIcon)
+//        addSubview(favoriteIcon)
+        addSubview(favoriteButton)
         
-        universityNameLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 0, width: frame.size.width - 10 - favoriteIcon.frame.size.width, height: 20, enableInsets: false)
-        departmentLabel.anchor(top: universityNameLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 0, width: frame.size.width - 10 - favoriteIcon.frame.size.width, height: 20, enableInsets: false)
-        favoriteIcon.anchor(top: topAnchor, left: nil, bottom: nil, right: rightAnchor , paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 40, height: 40, enableInsets: false)
+        favoriteButton.addTarget(self, action: #selector(didTapFavoriteButton), for: .touchUpInside)
+        
+        
+    }
+    
+    override func layoutSubviews() {
+        universityNameLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 0, width: frame.size.width - 10 - favoriteButton.frame.size.width, height: 20, enableInsets: false)
+        departmentLabel.anchor(top: universityNameLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 0, width: frame.size.width - 10 - favoriteButton.frame.size.width, height: 20, enableInsets: false)
+        favoriteButton.anchor(top: topAnchor, left: nil, bottom: nil, right: rightAnchor , paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 40, height: 40, enableInsets: false)
         
         let stackView1 = UIStackView(arrangedSubviews: [minScoreTitleLabel, placeMentTitleLabel, quotaTitleLabel])
         stackView1.distribution = .equalSpacing
@@ -154,6 +174,52 @@ class UniversityTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func didTapFavoriteButton() {
+        guard let viewModel = viewModel else {
+            return
+        }
+        var newViewModel = viewModel
+        
+        newViewModel.isFavorite = !viewModel.isFavorite
+        
+        delegate?.universityTableViewCell(self, didTapWith: newViewModel)
+        
+        prepareForReuse()
+        configure(with: newViewModel)
+    }
+    
+    // Set text of views from viewModel
+    func configure(with viewModel: UniversityViewModel) {
+        self.viewModel = viewModel
+        
+        universityNameLabel.text = viewModel.name
+        departmentLabel.text = viewModel.department
+        minScoreValueLabel.text = viewModel.minScore
+        placeMentValueLabel.text = viewModel.placement
+        quotaValueLabel.text = viewModel.quaota
+        
+        if viewModel.isFavorite {
+//            favoriteIcon.image = UIImage(systemName: "heart.fill")
+            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
+        else {
+//            favoriteIcon.image = UIImage(systemName: "heart")
+            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        universityNameLabel.text = nil
+        departmentLabel.text = nil
+        minScoreValueLabel.text = nil
+        placeMentValueLabel.text = nil
+        quotaValueLabel.text = nil
+//        favoriteIcon.image = nil
+        favoriteButton.setImage(nil, for: .normal)
     }
     
 }
