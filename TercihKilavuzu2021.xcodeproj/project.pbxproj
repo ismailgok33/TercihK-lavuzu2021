@@ -25,6 +25,7 @@
 		EC2705E826BB1C6A0011526F /* UniversityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2705E726BB1C6A0011526F /* UniversityTableViewCell.swift */; };
 		EC46F8A226C457D5007911BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC46F8A126C457D5007911BB /* GoogleService-Info.plist */; };
 		EC46F8A526C45C45007911BB /* UniversityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46F8A426C45C45007911BB /* UniversityViewModel.swift */; };
+		EC635DC626C71B370054EDBC /* UniversityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC635DC526C71B370054EDBC /* UniversityService.swift */; };
 		EC898CC026BC621C00F7FE8E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC898CBF26BC621C00F7FE8E /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		EC2705E726BB1C6A0011526F /* UniversityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityTableViewCell.swift; sourceTree = "<group>"; };
 		EC46F8A126C457D5007911BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC46F8A426C45C45007911BB /* UniversityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityViewModel.swift; sourceTree = "<group>"; };
+		EC635DC526C71B370054EDBC /* UniversityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityService.swift; sourceTree = "<group>"; };
 		EC898CBF26BC621C00F7FE8E /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 				EC2705D226BB07A70011526F /* Views */,
 				EC46F8A326C45C2A007911BB /* ViewModels */,
 				EC2705D126BB07A10011526F /* Models */,
+				EC635DC426C71B0E0054EDBC /* Service */,
 				EC2705C826BB06530011526F /* Info.plist */,
 				EC46F8A126C457D5007911BB /* GoogleService-Info.plist */,
 			);
@@ -165,6 +168,14 @@
 				EC46F8A426C45C45007911BB /* UniversityViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EC635DC426C71B0E0054EDBC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EC635DC526C71B370054EDBC /* UniversityService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		F648A93709A892F4A3B09BBB /* Pods */ = {
@@ -295,6 +306,7 @@
 				EC2705D726BB08460011526F /* TabBarViewController.swift in Sources */,
 				EC2705BF26BB06520011526F /* HomeViewController.swift in Sources */,
 				EC2705E226BB09440011526F /* StorageManager.swift in Sources */,
+				EC635DC626C71B370054EDBC /* UniversityService.swift in Sources */,
 				EC2705BB26BB06520011526F /* AppDelegate.swift in Sources */,
 				EC2705D926BB087C0011526F /* FavoritesViewController.swift in Sources */,
 				EC2705DC26BB08A20011526F /* FiltersViewController.swift in Sources */,

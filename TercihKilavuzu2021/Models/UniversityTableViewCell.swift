@@ -15,21 +15,40 @@ class UniversityTableViewCell: UITableViewCell {
     
     var delegate: UniversityTableViewCellDelegate?
 
-    private var viewModel: UniversityViewModel?
+//    private var viewModel: UniversityViewModel?
     
-    var university : University? {
+    var universityViewModel: UniversityViewModel! {
         didSet {
-            // set values here
-            if let uni = university {
-                universityNameLabel.text = "\(uni.name) (\(uni.city))"
-                departmentLabel.text = uni.department
-                minScoreValueLabel.text = "1000"
-                placeMentValueLabel.text = "200"
-                quotaValueLabel.text = "50"
+            
+            universityNameLabel.text = universityViewModel.name
+            departmentLabel.text = universityViewModel.department
+            minScoreValueLabel.text = universityViewModel.minScore
+            placeMentValueLabel.text = universityViewModel.placement
+            quotaValueLabel.text = universityViewModel.quaota
+            
+            if universityViewModel.isFavorite {
+                favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            }
+            else {
+                favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
             }
             
         }
     }
+    
+//    var university : University? {
+//        didSet {
+//            // set values here
+//            if let uni = university {
+//                universityNameLabel.text = "\(uni.name) (\(uni.city))"
+//                departmentLabel.text = uni.department
+//                minScoreValueLabel.text = "1000"
+//                placeMentValueLabel.text = "200"
+//                quotaValueLabel.text = "50"
+//            }
+//
+//        }
+//    }
     
     private let universityNameLabel : UILabel = {
         let label = UILabel()
@@ -177,7 +196,7 @@ class UniversityTableViewCell: UITableViewCell {
     }
     
     @objc private func didTapFavoriteButton() {
-        guard let viewModel = viewModel else {
+        guard let viewModel = universityViewModel else {
             return
         }
         var newViewModel = viewModel
@@ -187,28 +206,28 @@ class UniversityTableViewCell: UITableViewCell {
         delegate?.universityTableViewCell(self, didTapWith: newViewModel)
         
         prepareForReuse()
-        configure(with: newViewModel)
+//        configure(with: newViewModel)
     }
     
     // Set text of views from viewModel
-    func configure(with viewModel: UniversityViewModel) {
-        self.viewModel = viewModel
-        
-        universityNameLabel.text = viewModel.name
-        departmentLabel.text = viewModel.department
-        minScoreValueLabel.text = viewModel.minScore
-        placeMentValueLabel.text = viewModel.placement
-        quotaValueLabel.text = viewModel.quaota
-        
-        if viewModel.isFavorite {
-//            favoriteIcon.image = UIImage(systemName: "heart.fill")
-            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        }
-        else {
-//            favoriteIcon.image = UIImage(systemName: "heart")
-            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        }
-    }
+//    func configure(with viewModel: UniversityViewModel) {
+//        self.viewModel = viewModel
+//
+//        universityNameLabel.text = viewModel.name
+//        departmentLabel.text = viewModel.department
+//        minScoreValueLabel.text = viewModel.minScore
+//        placeMentValueLabel.text = viewModel.placement
+//        quotaValueLabel.text = viewModel.quaota
+//        
+//        if viewModel.isFavorite {
+////            favoriteIcon.image = UIImage(systemName: "heart.fill")
+//            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+//        }
+//        else {
+////            favoriteIcon.image = UIImage(systemName: "heart")
+//            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+//        }
+//    }
     
     override func prepareForReuse() {
         super.prepareForReuse()

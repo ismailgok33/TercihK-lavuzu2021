@@ -13,9 +13,8 @@ class HomeViewController: UIViewController {
     let tableView = UITableView()
     
     let searchController = UISearchController()
-    var universities : [University] = [University]()
+    var universityViewModels = [UniversityViewModel]()
     
-//    private var universityVm = UniversityViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +32,7 @@ class HomeViewController: UIViewController {
         searchController.searchBar.placeholder = "Üniversite arayınız..."
         navigationItem.searchController = searchController
         
-        
+        fetchData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -41,7 +40,17 @@ class HomeViewController: UIViewController {
         tableView.frame = view.bounds
     }
     
-   
+    fileprivate func fetchData() {
+        UniversityService.shared.fetchUniversities { universities, error in
+            if let err = error {
+                print("Failed to fetch courses: \(err)")
+                return
+            }
+            
+            self.universityViewModels = universities?.map({ return UniversityViewModel(with: $0) }) ?? []
+            self.tableView.reloadData()
+        }
+    }
     
     // Load items from db
     private func loadAllUniversities() {
@@ -57,15 +66,16 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return universities.count
+        return universityViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UniversityTableViewCell
-        let model = universities[indexPath.row]
+        let viewModel = universityViewModels[indexPath.row]
         
+        cell.universityViewModel = viewModel
 //        cell.university = universities[indexPath.row]
-        cell.configure(with: UniversityViewModel(with: model))
+//        cell.configure(with: UniversityViewModel(with: model))
         cell.delegate = self
          
         return cell
@@ -73,7 +83,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("\(universities[indexPath.row].name) is tapped")
+        print("\(universityViewModels[indexPath.row].name) is tapped")
     }
     
     
