@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UniversityTableViewCell.self, forCellReuseIdentifier: cellId)
         
-        tableView.rowHeight = 200
+        tableView.rowHeight = 250
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -48,6 +48,9 @@ class HomeViewController: UIViewController {
             }
             
             self.universityViewModels = universities?.map({ return UniversityViewModel(with: $0) }) ?? []
+            
+            print("universityViewModels: \(self.universityViewModels)")
+            
             self.tableView.reloadData()
         }
     }
@@ -81,10 +84,10 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        print("\(universityViewModels[indexPath.row].name) is tapped")
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        print("\(universityViewModels[indexPath.row].name) is tapped")
+//    }
     
     
 }
@@ -112,8 +115,13 @@ extension HomeViewController : UISearchResultsUpdating {
 extension HomeViewController: UniversityTableViewCellDelegate {
     func universityTableViewCell(_ cell: UniversityTableViewCell, didTapWith viewModel: UniversityViewModel) {
         
+        print(viewModel.isFavorite)
+        
         if viewModel.isFavorite {
             // Save cell to favorites
+            
         }
+        
+//        tableView.reloadData()
     }
 }

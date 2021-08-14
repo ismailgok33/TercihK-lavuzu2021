@@ -28,27 +28,16 @@ class UniversityTableViewCell: UITableViewCell {
             
             if universityViewModel.isFavorite {
                 favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+//                favoriteButton.setTitle("Defav", for: .normal)
+//                favoriteButton.setTitleColor(.red, for: .normal)
             }
             else {
                 favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+//                favoriteButton.setTitle("Fav", for: .normal)
+//                favoriteButton.setTitleColor(.blue, for: .normal)
             }
-            
         }
     }
-    
-//    var university : University? {
-//        didSet {
-//            // set values here
-//            if let uni = university {
-//                universityNameLabel.text = "\(uni.name) (\(uni.city))"
-//                departmentLabel.text = uni.department
-//                minScoreValueLabel.text = "1000"
-//                placeMentValueLabel.text = "200"
-//                quotaValueLabel.text = "50"
-//            }
-//
-//        }
-//    }
     
     private let universityNameLabel : UILabel = {
         let label = UILabel()
@@ -146,6 +135,14 @@ class UniversityTableViewCell: UITableViewCell {
     
     private let favoriteButton : UIButton = {
        let button = UIButton()
+        button.tintColor = .systemPink
+        let size = CGSize(width: 40, height: 40)
+        let inset = UIEdgeInsets(top: (button.frame.size.height - size.height) / 2,
+                                 left: (button.frame.size.width - size.width) / 2,
+                                 bottom: (button.frame.size.height - size.height) / 2,
+                                 right: (button.frame.size.width - size.width) / 2)
+        button.imageEdgeInsets = inset
+
         return button
     }()
     
@@ -154,14 +151,14 @@ class UniversityTableViewCell: UITableViewCell {
         
         addSubview(universityNameLabel)
         addSubview(departmentLabel)
-        addSubview(minScoreTitleLabel)
-        addSubview(minScoreValueLabel)
-        addSubview(placeMentTitleLabel)
-        addSubview(placeMentValueLabel)
-        addSubview(quotaTitleLabel)
-        addSubview(quotaValueLabel)
+//        addSubview(minScoreTitleLabel)
+//        addSubview(minScoreValueLabel)
+//        addSubview(placeMentTitleLabel)
+//        addSubview(placeMentValueLabel)
+//        addSubview(quotaTitleLabel)
+//        addSubview(quotaValueLabel)
 //        addSubview(favoriteIcon)
-        addSubview(favoriteButton)
+        contentView.addSubview(favoriteButton)
         
         favoriteButton.addTarget(self, action: #selector(didTapFavoriteButton), for: .touchUpInside)
         
@@ -169,26 +166,28 @@ class UniversityTableViewCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
+//        favoriteButton.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+
         universityNameLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 0, width: frame.size.width - 10 - favoriteButton.frame.size.width, height: 20, enableInsets: false)
         departmentLabel.anchor(top: universityNameLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 0, width: frame.size.width - 10 - favoriteButton.frame.size.width, height: 20, enableInsets: false)
         favoriteButton.anchor(top: topAnchor, left: nil, bottom: nil, right: rightAnchor , paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 40, height: 40, enableInsets: false)
         
-        let stackView1 = UIStackView(arrangedSubviews: [minScoreTitleLabel, placeMentTitleLabel, quotaTitleLabel])
-        stackView1.distribution = .equalSpacing
-        stackView1.axis = .horizontal
-        stackView1.spacing = 5
-        stackView1.alignment = .center
-        addSubview(stackView1)
+//        let stackView1 = UIStackView(arrangedSubviews: [minScoreTitleLabel, placeMentTitleLabel, quotaTitleLabel])
+//        stackView1.distribution = .equalSpacing
+//        stackView1.axis = .horizontal
+//        stackView1.spacing = 5
+//        stackView1.alignment = .center
+//        addSubview(stackView1)
+
+//        let stackView2 = UIStackView(arrangedSubviews: [minScoreValueLabel, placeMentValueLabel, quotaValueLabel])
+//        stackView2.distribution = .equalSpacing
+//        stackView2.axis = .horizontal
+//        stackView2.spacing = 5
+//        stackView2.alignment = .center
+//        addSubview(stackView2)
         
-        let stackView2 = UIStackView(arrangedSubviews: [minScoreValueLabel, placeMentValueLabel, quotaValueLabel])
-        stackView2.distribution = .equalSpacing
-        stackView2.axis = .horizontal
-        stackView2.spacing = 5
-        stackView2.alignment = .center
-        addSubview(stackView2)
-        
-        stackView1.anchor(top: departmentLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: frame.size.width, height: 50, enableInsets: false)
-        stackView2.anchor(top: stackView1.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: frame.size.width , height: 50, enableInsets: false)
+//        stackView1.anchor(top: departmentLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: frame.size.width - 50, height: 50, enableInsets: false)
+//        stackView2.anchor(top: stackView1.bottomAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: frame.size.width - 50 , height: 50, enableInsets: false)
     }
     
     required init?(coder: NSCoder) {
@@ -201,33 +200,41 @@ class UniversityTableViewCell: UITableViewCell {
         }
         var newViewModel = viewModel
         
+        print("button tapped")
+        
         newViewModel.isFavorite = !viewModel.isFavorite
         
         delegate?.universityTableViewCell(self, didTapWith: newViewModel)
         
         prepareForReuse()
 //        configure(with: newViewModel)
+        configure(with: newViewModel)
+        
     }
     
     // Set text of views from viewModel
-//    func configure(with viewModel: UniversityViewModel) {
-//        self.viewModel = viewModel
-//
+    func configure(with viewModel: UniversityViewModel) {
+        self.universityViewModel = viewModel
+
 //        universityNameLabel.text = viewModel.name
 //        departmentLabel.text = viewModel.department
 //        minScoreValueLabel.text = viewModel.minScore
 //        placeMentValueLabel.text = viewModel.placement
-//        quotaValueLabel.text = viewModel.quaota
-//        
-//        if viewModel.isFavorite {
-////            favoriteIcon.image = UIImage(systemName: "heart.fill")
-//            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-//        }
-//        else {
-////            favoriteIcon.image = UIImage(systemName: "heart")
-//            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
-//        }
-//    }
+        //        quotaValueLabel.text = viewModel.quaota
+        
+        if viewModel.isFavorite {
+                            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+//            favoriteButton.setTitle("Defav", for: .normal)
+//            favoriteButton.setTitleColor(.red, for: .normal)
+        }
+        else {
+                            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+//            favoriteButton.setTitle("Fav", for: .normal)
+//            favoriteButton.setTitleColor(.blue, for: .normal)
+            
+            
+        }
+    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
