@@ -6,14 +6,18 @@
 //
 
 import UIKit
+import RealmSwift
 
 class HomeViewController: UIViewController {
+    
+    let realm = try! Realm()
     
     let cellId = "cellId"
     let tableView = UITableView()
     
     let searchController = UISearchController()
     var universityViewModels = [UniversityViewModel]()
+//    var favorites : Results<UniversityViewModel>?
     
     
     override func viewDidLoad() {
@@ -115,12 +119,34 @@ extension HomeViewController : UISearchResultsUpdating {
 extension HomeViewController: UniversityTableViewCellDelegate {
     func universityTableViewCell(_ cell: UniversityTableViewCell, didTapWith viewModel: UniversityViewModel) {
         
+        let service = UniversityService.shared
+        
         print(viewModel.isFavorite)
         
         if viewModel.isFavorite {
             // Save cell to favorites
-            
+//            do {
+//                try realm.write({
+//                    realm.add(viewModel)
+//                })
+//            } catch {
+//                print("Error while saving item to db \(error)")
+//            }
+            service.saveFavorites(viewModel: viewModel)
         }
+        else {
+//            do {
+//                try realm.write {
+//                    realm.delete(viewModel)
+//                }
+//            } catch {
+//                print("Error while deleting a category \(error)")
+//            }
+            
+            service.deleteFromFavorites(viewModel: viewModel)
+        }
+        
+        service.loadFavorites()
         
 //        tableView.reloadData()
     }

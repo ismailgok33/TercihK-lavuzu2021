@@ -8,4 +8,5 @@ target 'TercihKilavuzu2021' do
   # Pods for TercihKilavuzu2021
  pod 'Firebase/Analytics'
  pod 'Firebase/Firestore'
+ pod 'RealmSwift'
 end

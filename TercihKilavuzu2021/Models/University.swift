@@ -6,17 +6,18 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct University: Identifiable {
-    let id : String = UUID().uuidString
-    let name : String
-    let department : String
-    let city : String
-    let language : String
-    let minScore : String
-    let placement : String
-    let quaota : String
-    let duration : String
-    let type : String
+class University: Object, Identifiable {
+    @objc dynamic var id : String = UUID().uuidString
+    @objc dynamic var name : String = ""
+    @objc dynamic var department : String = ""
+    @objc dynamic var city : String = ""
+    @objc dynamic var language : String = ""
+    @objc dynamic var minScore : String = ""
+    @objc dynamic var placement : String = ""
+    @objc dynamic var quaota : String = ""
+    @objc dynamic var duration : String = ""
+    @objc dynamic var type : String = ""
     
 }
